@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Prenota · Pineta Tennis &amp; Padel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div id="chrome-header"></div>
+<main>
+<div class="page-hero"><div class="wrap"><span class="eyebrow">Prenotazione campi</span><h1>Scegli il campo.<br>Scegli l'ora.</h1><p class="lead">Seleziona sport, giorno e uno slot libero. Ogni prenotazione dura un'ora e si può pagare in anticipo.</p></div></div>
+<section class="first"><div class="wrap"><div class="book">
+<div class="panel">
+ <div class="seg" role="group" aria-label="Sport">
+  <button type="button" id="sportTennis" aria-pressed="true">Tennis</button>
+  <button type="button" id="sportPadel" class="padel" aria-pressed="false">Padel</button>
+ </div>
+ <div class="days" id="days" role="group" aria-label="Giorno"></div>
+ <div class="grid" id="grid"></div>
+ <div class="legend"><span><i></i>Libero</span><span><i class="t"></i>Occupato</span><span><i class="m"></i>Prenotato da te</span></div>
+ <p class="demo-note" id="modeNote" hidden></p>
+</div>
+<aside class="side" aria-label="Riepilogo prenotazione">
+ <div class="panel" id="formPanel">
+  <h3>La tua prenotazione</h3>
+  <div id="summary" class="empty">Scegli uno slot libero nella griglia per iniziare.</div>
+  <form id="bookForm" hidden>
+   <label for="bkName">Nome e cognome</label>
+   <input type="text" id="bkName" autocomplete="name" maxlength="40" required>
+   <label id="methodsLabel">Come vuoi pagare</label>
+   <div class="methods" role="radiogroup" aria-labelledby="methodsLabel">
+    <label class="method"><input type="radio" name="pay" value="circolo" checked><span>Paga al circolo<small>Salda l'importo prima di entrare in campo.</small></span></label>
+    <label class="method"><input type="radio" name="pay" value="online"><span>Paga online adesso<small>Slot riservato per <span id="holdOn"></span> minuti in attesa del pagamento.</small></span></label>
+    <label class="method"><input type="radio" name="pay" value="bank"><span>Bonifico bancario<small>Slot riservato per <span id="holdBk"></span> ore in attesa del bonifico.</small></span></label>
+   </div>
+   <p class="pay-help" id="policy" style="margin-top:.8rem"></p>
+   <button class="btn confirm" type="submit" id="bkConfirm">Conferma prenotazione</button>
+  </form>
+  <div id="bkMsg" role="status" aria-live="polite"></div>
+ </div>
+ <div class="panel" id="payPanel" hidden></div>
+ <div class="panel">
+  <h3>Le mie prenotazioni</h3>
+  <ul class="mylist" id="myList"></ul>
+  <p class="empty" id="myEmpty">Nessuna prenotazione in programma.</p>
+ </div>
+</aside>
+</div></div></section>
+</main>
+<div id="chrome-footer"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="prenota.js"></script>
+</body></html>
