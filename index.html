@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pineta Tennis & Padel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<div id="chrome-header"></div>
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">ASD · Tennis e Padel</span>
+          <h1>Pineta<em>Tennis &amp; Padel</em></h1>
+          <p class="lead">L'associazione sportiva dilettantistica che vive dentro il circolo: corsi per tutte le età, tornei sociali e campi prenotabili online, con pagamento anticipato.</p>
+          <div class="btns">
+            <a class="btn solid" href="prenota.html">Prenota un campo</a>
+            <a class="btn" href="corsi.html">Iscriviti a un corso</a>
+          </div>
+        </div>
+        <div class="hero-court" id="heroCourt" aria-hidden="true"></div>
+      </div>
+      <div class="stats">
+        <div><b>3</b><span>campi da tennis</span></div>
+        <div><b>2</b><span>campi da padel</span></div>
+        <div><b>08–22</b><span>aperti ogni giorno</span></div>
+        <div><b>1974</b><span>anno di fondazione</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Cosa trovi qui</span>
+        <h2>Gioca, impara,<br>vivi il circolo</h2>
+      </div>
+      <div class="teasers">
+        <a class="teaser" href="prenota.html"><h3>Prenota</h3><p>Scegli campo, giorno e ora. Paga online, con bonifico o al circolo.</p><span class="go">Vai alle prenotazioni →</span></a>
+        <a class="teaser" href="corsi.html"><h3>Corsi</h3><p>Mini tennis, scuola junior, adulti, padel e agonistica. Iscrizione online.</p><span class="go">Scopri i corsi →</span></a>
+        <a class="teaser" href="struttura.html"><h3>Struttura</h3><p>Tre campi da tennis, due da padel, club house e servizi.</p><span class="go">Vedi i campi →</span></a>
+        <a class="teaser" href="storia.html"><h3>Storia</h3><p>Dal 1974 a oggi: il circolo e la società sportiva.</p><span class="go">Leggi la storia →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Eventi</span>
+        <h2>Prossimi<br>appuntamenti</h2>
+      </div>
+      <div class="events" id="nextEvents"></div>
+      <div class="btn-row" style="margin-top:1.5rem"><a class="btn ghost" href="eventi.html">Tutti gli eventi</a><a class="btn ghost" href="galleria.html">Galleria</a><a class="btn ghost" href="contatti.html">Contatti</a></div>
+    </div>
+  </section>
+</main>
+<div id="chrome-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="data.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script src="store.js"></script>
+<script>
+window.App.ready.then(function () {(function () {
+  "use strict";
+  var App = window.App, h = App.h, $ = App.$;
+  App.chrome("index.html");
+  var hc = App.courtSVG("tennis", "#16503F", "#F3F7EE", { sw: 2.5, par: "xMidYMax meet" });
+  $("#heroCourt").appendChild(hc);
+  var box = $("#nextEvents");
+  window.EVENTS.slice(0, 3).forEach(function (e) {
+    var d = App.parseIso(e.d);
+    box.appendChild(h("article", { class: "event" }, [
+      h("div", { class: "date" }, [h("b", { text: String(d.getDate()) }), h("span", { text: App.MONTHS[d.getMonth()] + " " + d.getFullYear() })]),
+      h("div", {}, [h("h3", { text: e.title }), h("p", { text: e.text }), h("p", { class: "meta", text: e.meta }), h("a", { class: "more", href: "eventi.html#" + e.id, text: "Dettagli e locandina" })]),
+      h("div", { class: "tag-col" }, [h("span", { class: "tag" + (e.cat === "Padel" ? " padel" : ""), text: e.cat === "Sociale" ? "Vita sociale" : e.cat })])
+    ]));
+  });
+})();});
+</script>
+
+</body></html>

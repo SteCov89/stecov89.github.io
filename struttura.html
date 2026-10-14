@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Struttura · Pineta Tennis &amp; Padel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div id="chrome-header"></div>
+<main>
+<div class="page-hero"><div class="wrap"><span class="eyebrow">La struttura</span><h1>Cinque campi,<br>una sola club house</h1><p class="lead">Superfici diverse per giocare come preferisci. Dati e tariffe sono esempi da aggiornare.</p></div></div>
+<section class="first"><div class="wrap"><div class="courts" id="courtCards"></div>
+<div class="services">
+<div><b>Club house e bar</b>Aperti dalla mattina, con terrazza sui campi.</div>
+<div><b>Spogliatoi e docce</b>Armadietti, asciugacapelli, area relax.</div>
+<div><b>Illuminazione serale</b>Luci LED su tutti i campi.</div>
+<div><b>Parcheggio e noleggio</b>Posti auto riservati, racchette e palline a noleggio.</div>
+</div>
+<div class="btn-row" style="margin-top:2rem"><a class="btn solid" href="prenota.html" style="color:var(--ball-ink)">Prenota un campo</a></div>
+</div></section>
+</main>
+<div id="chrome-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="data.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script src="store.js"></script>
+
+<script>
+window.App.ready.then(function () {(function () { "use strict"; var App=window.App,h=App.h,$=App.$,C=window.CLUB;
+App.chrome("struttura.html");
+var cards=$("#courtCards");
+window.COURTS.forEach(function(c){var isP=c.sport==="padel";
+ var thumb=h("div",{class:"thumb"});
+ thumb.appendChild(App.courtSVG(c.sport,isP?"#2B5FC9":(c.surface==="Cemento"?"#3F6E8F":"#B5532F"),"#FFFFFF",{label:"Schema del "+c.name}));
+ cards.appendChild(h("article",{class:"court"},[thumb,h("div",{class:"body"},[
+  h("span",{class:"tag"+(isP?" padel":""),text:isP?"Padel":"Tennis"}),h("h3",{text:c.name}),
+  h("ul",{class:"facts"},[
+   h("li",{},[h("span",{text:"Superficie"}),h("span",{text:c.surface})]),
+   h("li",{},[h("span",{text:"Copertura"}),h("span",{text:c.cover})]),
+   h("li",{},[h("span",{text:"Tariffa oraria"}),h("span",{text:App.euro(c.price)})])])])]));});
+})();});
+</script>
+</body></html>
