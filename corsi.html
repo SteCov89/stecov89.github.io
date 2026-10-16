@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Corsi · Pineta Tennis &amp; Padel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div id="chrome-header"></div>
+<main>
+<div class="page-hero"><div class="wrap"><span class="eyebrow">La scuola · Corsi e iscrizioni</span><h1>Impara a giocare<br>con noi</h1><p class="lead">Corsi collettivi e lezioni private di tennis e padel per bambini, ragazzi e adulti, con istruttori qualificati. Iscrizione online con pagamento anticipato.</p></div></div>
+
+<section class="first"><div class="wrap">
+ <div class="sec-head"><span class="eyebrow">Il programma</span><h2>Scegli il tuo corso</h2></div>
+ <div class="chips" role="group" aria-label="Filtra per sport">
+  <button class="chip" type="button" data-s="all" aria-pressed="true">Tutti</button>
+  <button class="chip" type="button" data-s="tennis" aria-pressed="false">Tennis</button>
+  <button class="chip" type="button" data-s="padel" aria-pressed="false">Padel</button>
+ </div>
+ <div class="course-grid" id="courseGrid"></div>
+ <p class="note" id="courseEmpty" hidden>Nessun corso corrisponde ai filtri. Prova a cambiare sport, oppure contatta la segreteria.</p>
+ <p class="note">Prezzi a persona, per ciclo di lezioni. Vuoi conoscere chi tiene i corsi? <a href="staff.html">Scopri lo staff</a>.</p>
+</div></section>
+
+<section><div class="wrap">
+ <div class="sec-head"><span class="eyebrow">Come iscriversi</span><h2>Quattro passaggi</h2></div>
+ <ol class="steps">
+  <li><b>Scegli il corso</b><span>Trova livello, giorni e orario adatti a te o a tuo figlio.</span></li>
+  <li><b>Compila il modulo</b><span>Inserisci i dati dell'allievo e di un referente per le comunicazioni.</span></li>
+  <li><b>Paga in anticipo</b><span>Quota associativa e primo ciclo: online, con bonifico o direttamente in segreteria.</span></li>
+  <li><b>Porta il certificato e inizia</b><span>Consegna il certificato medico in segreteria prima della prima lezione.</span></li>
+ </ol>
+ <div class="story" style="margin-top:2.5rem">
+  <div><h3 style="margin-bottom:.8rem">Cosa serve</h3>
+   <ul class="checks">
+    <li>Certificato medico di idoneità sportiva in corso di validità.</li>
+    <li>Documento d'identità dell'allievo e codice fiscale.</li>
+    <li>Per i minorenni, i dati di un genitore o tutore.</li>
+    <li>Scarpe da tennis o da padel adatte alla superficie. Racchette disponibili a noleggio.</li>
+   </ul></div>
+  <div><h3 style="margin-bottom:.8rem">Costi</h3>
+   <ul class="checks">
+    <li>Quota associativa annuale all'ASD, comprensiva di tesseramento e assicurazione (esempio).</li>
+    <li>Quota del ciclo di lezioni, come indicata su ogni corso.</li>
+    <li>Prova gratuita a richiesta per i corsi di mini tennis e junior (esempio).</li>
+   </ul></div>
+ </div>
+</div></section>
+
+<section id="iscrizione" class="band"><div class="wrap">
+ <div class="sec-head"><span class="eyebrow">Modulo di iscrizione</span><h2>Iscriviti al corso</h2><p class="lead">Invii la richiesta e scegli come pagare. La segreteria conferma l'iscrizione dopo aver verificato pagamento e certificato.</p></div>
+ <div class="enroll-wrap">
+  <div class="panel">
+   <form id="enrollForm">
+    <div class="form-grid">
+     <div class="full"><label for="enCourse" style="margin-top:0">Corso</label><select id="enCourse" required></select></div>
+     <div><label for="enName">Nome e cognome dell'allievo</label><input type="text" id="enName" maxlength="60" autocomplete="off" required></div>
+     <div><label for="enBirth">Data di nascita</label><input type="date" id="enBirth" required></div>
+     <div class="full"><label for="enGuardian">Genitore o tutore (se l'allievo è minorenne)</label><input type="text" id="enGuardian" maxlength="60" autocomplete="name"></div>
+     <div><label for="enMail">Email di riferimento</label><input type="email" id="enMail" maxlength="80" autocomplete="email" required></div>
+     <div><label for="enPhone">Telefono</label><input type="tel" id="enPhone" maxlength="24" autocomplete="tel" required></div>
+    </div>
+    <label id="enMethodsLabel">Come vuoi pagare</label>
+    <div class="methods" role="radiogroup" aria-labelledby="enMethodsLabel">
+     <label class="method"><input type="radio" name="enpay" value="circolo" checked><span>Paga in segreteria<small>Salda quota e primo ciclo prima dell'inizio del corso.</small></span></label>
+     <label class="method"><input type="radio" name="enpay" value="online"><span>Paga online adesso<small>Carta o PayPal, subito dopo l'invio della richiesta.</small></span></label>
+     <label class="method"><input type="radio" name="enpay" value="bank"><span>Bonifico bancario<small>Ti mostriamo IBAN e causale da usare.</small></span></label>
+    </div>
+    <label class="check"><input type="checkbox" id="enConsent" required><span>Ho letto il regolamento del circolo e acconsento al trattamento dei dati personali per la gestione dell'iscrizione. I dati sono visibili solo alla segreteria.</span></label>
+    <button class="btn confirm" type="submit" id="enSubmit">Invia iscrizione</button>
+   </form>
+   <div id="enMsg" role="status" aria-live="polite"></div>
+  </div>
+  <aside class="side" style="position:static">
+   <div class="panel"><h3>Riepilogo costi</h3><div id="enSummary" class="empty">Scegli un corso per vedere l'importo da pagare.</div></div>
+   <div class="panel" id="enPayPanel" hidden></div>
+   <div class="panel"><h3>Le mie iscrizioni</h3><ul class="mylist" id="enList"></ul><p class="empty" id="enEmpty">Nessuna iscrizione inviata da questo account.</p><p class="demo-note" id="enNote" hidden></p></div>
+  </aside>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <div class="sec-head"><span class="eyebrow">Domande frequenti</span><h2>Prima di iniziare</h2></div>
+ <div class="faq">
+  <details><summary>Posso provare prima di iscrivermi?</summary><p>Per mini tennis e scuola junior è prevista una lezione di prova gratuita. Contatta la segreteria per fissarla (esempio).</p></details>
+  <details><summary>Cosa succede se perdo una lezione?</summary><p>Le lezioni perse per assenza non si recuperano. Quelle annullate dal circolo per meteo o indisponibilità dell'istruttore si recuperano in un altro giorno (esempio).</p></details>
+  <details><summary>Posso cambiare corso dopo l'iscrizione?</summary><p>Sì, se ci sono posti nel gruppo scelto. Scrivi alla segreteria prima dell'inizio del ciclo successivo.</p></details>
+  <details><summary>Come funziona il rimborso?</summary><p>Se il corso non parte per mancanza di iscritti, la quota del ciclo è rimborsata per intero. Per ritiri dopo l'inizio, la segreteria valuta caso per caso (esempio).</p></details>
+  <details><summary>Chi conferma la mia iscrizione?</summary><p>La segreteria, dopo aver verificato pagamento e certificato medico. Lo stato dell'iscrizione resta visibile nella pagina, nella sezione “Le mie iscrizioni”.</p></details>
+ </div>
+</div></section>
+</main>
+<div id="chrome-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="data.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script src="store.js"></script>
+<script src="cms.js"></script>
+<script src="corsi.js"></script>
+</body></html>

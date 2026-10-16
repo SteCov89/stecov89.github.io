@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Contatti · Pineta Tennis &amp; Padel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div id="chrome-header"></div>
+<main>
+<div class="page-hero"><div class="wrap"><span class="eyebrow">Contatti</span><h1>Vieni a trovarci</h1></div></div>
+<section class="first"><div class="wrap"><div class="contact">
+<div class="rows" id="rows"></div>
+<div class="hours-stack">
+<section class="panel club" aria-labelledby="clubT"><span class="badge-club">Per giocare</span><h3 id="clubT">Orari di apertura del circolo</h3><p class="office-sub">Campi e impianti aperti ai soci e agli ospiti</p><div class="hours" id="hours"></div></section>
+<section class="panel office" aria-labelledby="offT"><span class="badge-office">Per parlare con noi</span><h3 id="offT">Orari della segreteria</h3><p class="office-sub">Iscrizioni, corsi, tesseramento e prenotazioni telefoniche</p><div class="hours big" id="officeHours"></div><p class="note" id="officeNote"></p></section>
+<p class="note" id="ctNote"></p>
+</div>
+</div>
+<div class="mapbox" id="mapBox"><div class="map-head"><h3>Dove siamo</h3><a class="btn small" id="mapLink" target="_blank" rel="noopener" href="#">Apri in Google Maps</a></div>
+<div class="map-frame" id="mapFrame"></div><p class="note" id="mapNote"></p></div>
+</div></section>
+</main>
+<div id="chrome-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="data.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script src="store.js"></script>
+<script src="cms.js"></script>
+<script src="contatti.js"></script>
+</body></html>
