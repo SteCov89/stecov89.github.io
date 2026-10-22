@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Accedi · Pineta Tennis &amp; Padel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div id="chrome-header"></div>
+<main>
+<div class="page-hero"><div class="wrap"><span class="eyebrow" data-ed="accedi.il-tuo-account-100d">Il tuo account</span><h1 data-ed-title="accedi">Accedi</h1><p class="lead" data-ed="accedi.con-un-account-prenoti-9252">Con un account prenoti i campi, ti iscrivi ai corsi e ritrovi i tuoi pagamenti.</p></div></div>
+<section class="first"><div class="wrap" style="max-width:34rem">
+ <div class="panel" id="platformNote" hidden><p data-ed="accedi.su-questa-versione-di--31ca">Su questa versione di prova l'accesso con email non serve: si entra con l'account di claude.ai. Nel sito pubblico, qui comparirà l'accesso con email e password.</p></div>
+
+ <div class="panel" id="boxIn" hidden>
+  <div class="seg" role="group" aria-label="Accedi o registrati" style="margin-bottom:1rem">
+   <button type="button" id="tabIn" aria-pressed="true">Accedi</button>
+   <button type="button" id="tabUp" aria-pressed="false">Crea account</button>
+  </div>
+  <form id="authForm" novalidate>
+   <label for="auEmail" style="margin-top:0" data-ed="accedi.email-ce8a">Email</label>
+   <input type="email" id="auEmail" autocomplete="email" required>
+   <label for="auPass" data-ed="accedi.password-dc64">Password</label>
+   <input type="password" id="auPass" autocomplete="current-password" minlength="8" required>
+   <p class="pay-help" id="auHint" hidden style="margin-top:.4rem">Almeno 8 caratteri.</p>
+   <button class="btn confirm" type="submit" id="auSubmit">Accedi</button>
+  </form>
+  <p style="margin-top:1rem"><button type="button" class="link" id="auForgot">Password dimenticata?</button></p>
+  <div id="auMsg" role="status" aria-live="polite"></div>
+ </div>
+
+ <div class="panel" id="boxRecover" hidden>
+  <h3 data-ed="accedi.scegli-una-nuova-passw-a43f">Scegli una nuova password</h3>
+  <form id="recForm" novalidate>
+   <label for="rcPass" data-ed="accedi.nuova-password-661b">Nuova password</label>
+   <input type="password" id="rcPass" autocomplete="new-password" minlength="8" required>
+   <p class="pay-help" style="margin-top:.4rem" data-ed="accedi.almeno-8-caratteri-d939">Almeno 8 caratteri.</p>
+   <button class="btn confirm" type="submit">Salva password</button>
+  </form>
+  <div id="rcMsg" role="status" aria-live="polite"></div>
+ </div>
+
+ <div class="panel" id="boxOut" hidden>
+  <h3 data-ed="accedi.sei-dentro-80ed">Sei dentro</h3>
+  <p id="outMail" class="pay-help" style="margin-bottom:1rem"></p>
+  <div class="btn-row">
+   <a class="btn solid small" href="prenota.html" style="color:var(--ball-ink)" data-ed="accedi.prenota-un-campo-39ff">Prenota un campo</a>
+   <a class="btn ghost small" href="corsi.html" data-ed="accedi.corsi-0839">Corsi</a>
+   <a class="btn ghost small" href="segreteria.html" id="outStaff" hidden>Area Amministratore</a>
+   <button type="button" class="btn ghost small" id="outBtn">Esci</button>
+  </div>
+ </div>
+</div></section>
+</main>
+<div id="chrome-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="data.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script src="store.js"></script>
+<script src="cms.js"></script>
+<script src="edit.js"></script>
+<script src="accedi.js"></script>
+</body></html>

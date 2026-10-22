@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Galleria · Pineta Tennis &amp; Padel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div id="chrome-header"></div>
+<main>
+<div class="page-hero"><div class="wrap"><span class="eyebrow" data-ed="galleria.galleria-d3b7">Galleria</span><h1 data-ed-title="galleria">Il circolo<br>in immagini</h1><p class="lead" data-ed="galleria.campi-club-house-torne-eebe">Campi, club house, tornei e vita sociale. Tocca una foto per ingrandirla.</p></div></div>
+<section class="first"><div class="wrap"><div class="gal" id="gallery"></div>
+<p class="note" id="galEmpty" hidden>La galleria è in preparazione.</p>
+<dialog class="lightbox" id="lbDlg" aria-label="Foto ingrandita"><button type="button" class="x" id="lbClose" aria-label="Chiudi">×</button><button type="button" class="nav prev" id="lbPrev" aria-label="Foto precedente">‹</button><div class="lb-img" id="lbImg"></div><button type="button" class="nav next" id="lbNext" aria-label="Foto successiva">›</button><p class="lb-cap" id="lbCap"></p></dialog>
+</div></section>
+</main>
+<div id="chrome-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="data.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script src="store.js"></script>
+<script src="cms.js"></script>
+<script src="edit.js"></script>
+<script src="galleria.js"></script>
+</body></html>
